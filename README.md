@@ -13,7 +13,7 @@ if(strstr($array[$count],'form method') {
 ```
 将 `YOUR_API_KEY` 替换成你的SCKEY
 
-crontab执行 一分钟一次
+crontab -e添加
 ```bash
-* * * * * php /root/online.php
+* * * * * php /path/to/online.php
 ```
