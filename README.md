@@ -2,6 +2,7 @@
 Online server_limited API &amp;&amp; 有货微信推送
 
 去 http://sc.ftqq.com/3.version 绑定微信
+
 在 http://sc.ftqq.com/?c=code 获取SCKEY
 ```php
 $count = count($array) - 1;
