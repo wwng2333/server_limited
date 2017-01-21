@@ -6,8 +6,11 @@ https://console.online.net/en/order/server_limited
 ```php
 $array = $result[0];
 ```
+
 [0] = XC DEALS 1701.1
+
 [1] = XC DEALS 1701.2
+
 [4] = MD DEALS 1701.1
 
 去 http://sc.ftqq.com/3.version 绑定微信
