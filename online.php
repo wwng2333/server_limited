@@ -34,4 +34,11 @@ for($i=0;$i<count($offer);$i++) {
 	if($i>0) $result = array_merge($result, $offer[$i]);
 }
 
-echo json_encode($result[0])."\n";
+#echo json_encode($result[0])."\n";
+
+$array = $result[0];
+$count = count($array) - 1;
+if(strstr($array[$count],'form method') {
+	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了');
+	file_get_contents($url);
+}
