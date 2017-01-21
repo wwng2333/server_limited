@@ -13,6 +13,8 @@ $array = $result[0];
 
 [4] = MD DEALS 1701.1
 
+以此类推。
+
 去 http://sc.ftqq.com/3.version 绑定微信
 
 在 http://sc.ftqq.com/?c=code 获取SCKEY
