@@ -1,6 +1,21 @@
 <?php
+function curl($url) {
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$r = curl_exec($ch);
+	$curl_errno = curl_errno($ch);
+	curl_close($ch);
+	if($curl_errno > 0) {
+		return false;
+	} else {
+		return $r;
+	}
+}
+
 $url = 'https://console.online.net/en/order/server_limited';
-$html = explode("\n", file_get_contents($url));
+$html = explode("\n", curl($url));
 for($i=0;$i<count($html);$i++) {
 	$linenow = $html[$i];
 	if(strstr($linenow, '<span class="highlight">')) {
@@ -42,5 +57,5 @@ $count = count($array) - 1;
 if(strstr($array[$count],'server_limited')) {
 	#echo true;
 	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了');
-	file_get_contents($url);
+	curl($url);
 }
