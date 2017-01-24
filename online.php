@@ -52,10 +52,10 @@ for($i=0;$i<count($offer);$i++) {
 #echo json_encode($result[0])."\n";
 
 $array = $result[14];
-$count = count($array) - 1;
+$detail = implode("\n", $array);
 #var_dump($array[$count]);
-if(strstr($array[$count],'server_limited')) {
+if(strstr(current($array),'server_limited')) {
 	#echo true;
-	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了');
+	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了').'&desp='urlencode($detail);
 	curl($url);
 }

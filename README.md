@@ -17,6 +17,9 @@ $array = $result[0];
 
 去 http://sc.ftqq.com/3.version 绑定微信
 
+登入：用GitHub账号登入网站，就能获得一个SCKEY（在「发送消息」页面）
+绑定：点击「微信推送」，扫码关注同时即可完成绑定
+
 在 http://sc.ftqq.com/?c=code 获取SCKEY
 ```php
 $count = count($array) - 1;
