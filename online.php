@@ -51,8 +51,8 @@ for($i=0;$i<count($offer);$i++) {
 
 #echo json_encode($result[0])."\n";
 
-$array = $result[14];
-$detail = implode("\n", $array);
+if(isset($result[14])) $array = $result[14];
+$detail = implode("\n\n", $array);
 #var_dump($array[$count]);
 if(strstr(current($array),'server_limited')) {
 	#echo true;
