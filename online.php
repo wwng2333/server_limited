@@ -56,6 +56,6 @@ $detail = implode("\n", $array);
 #var_dump($array[$count]);
 if(strstr(current($array),'server_limited')) {
 	#echo true;
-	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了').'&desp='urlencode($detail);
+	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了').'&desp='.urlencode($detail);
 	curl($url);
 }
