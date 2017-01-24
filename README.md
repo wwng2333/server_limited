@@ -22,13 +22,9 @@ $array = $result[0];
 
 在 http://sc.ftqq.com/?c=code 获取SCKEY
 ```php
-$count = count($array) - 1;
-if(strstr($array[$count],'form method') {
-	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了');
-	file_get_contents($url);
-}
+function sc_send($text, $desp = '', $key = '') {
 ```
-将 `YOUR_API_KEY` 替换成你的SCKEY
+在 `$key = ''` 中添加你的SCKEY
 
 crontab -e添加
 ```bash

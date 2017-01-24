@@ -14,6 +14,20 @@ function curl($url) {
 	}
 }
 
+function sc_send($text, $desp = '', $key = '') {
+	$postdata = http_build_query(
+    array('text' => $text, 'desp' => $desp));
+	$opts = array('http' =>
+		array(
+			'method'  => 'POST',
+			'header'  => 'Content-type: application/x-www-form-urlencoded',
+			'content' => $postdata
+		)
+	);
+	$context = stream_context_create($opts);
+	return $result = file_get_contents('http://sc.ftqq.com/'.$key.'.send', false, $context);
+}
+
 $url = 'https://console.online.net/en/order/server_limited';
 $html = explode("\n", curl($url));
 for($i=0;$i<count($html);$i++) {
@@ -53,9 +67,5 @@ for($i=0;$i<count($offer);$i++) {
 
 $array = $result[0];
 $detail = implode("\n\n", $array);
-#var_dump($array[$count]);
-if(strstr(current($array),'server_limited')) {
-	#echo true;
-	$url = 'http://sc.ftqq.com/YOUR_API_KEY.send?text='.urlencode($array[0].'上货了').'&desp='.urlencode($detail);
-	curl($url);
-}
+$count = count($array) - 1;
+if(strstr($array[$count],'server_limited')) sc_send($array[0], $detail);
